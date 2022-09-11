@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.orientechnologies</groupId>
+        <artifactId>spring-data-orientdb-parent</artifactId>
+        <version>0.14</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <groupId>com.orientechnologies.samples</groupId>
+    <artifactId>spring-boot-orientdb-hello</artifactId>
+    <packaging>jar</packaging>
+    <name>Sample - Spring Boot OrientDB Hello</name>
+
+    <dependencies>
+
+        <!--  spring boot -->
+        <dependency>
+            <groupId>com.orientechnologies</groupId>
+            <artifactId>spring-boot-orientdb-autoconfigure</artifactId>
+            <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--  test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.ow2.asm</groupId>
+                    <artifactId>asm</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.orientechnologies</groupId>
+            <artifactId>spring-data-orientdb-object</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
